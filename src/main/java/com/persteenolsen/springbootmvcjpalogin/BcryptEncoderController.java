@@ -15,6 +15,7 @@ public class BcryptEncoderController {
     @GetMapping("/bcrypt")
     public String bcrypt(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
        
+        // Just for test my app!
         String password = "persteen1967";
 
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
