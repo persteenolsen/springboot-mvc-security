@@ -28,7 +28,7 @@
 	<div class="container">
 	<div class="body-content">
 
-	
+	<br>
 	<div class="header-text" >${welcomemessage}</div>
 	
 	This Web application use Spring Security for protecting the endpoints, and that means

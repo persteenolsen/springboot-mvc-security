@@ -45,17 +45,28 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
           .authorizeRequests()
 
             // The list of pages/views the users can request without being authenticated
-            .antMatchers("/", "/demo/mvclistpersons", "/home", "/welcome", "/bcrypt").permitAll()
+            .antMatchers("/", "/demo/mvclistpersons", "/home", "/welcome","/bcrypt").permitAll()
             .anyRequest().authenticated()
             .and()
           .formLogin()
               // With no costum login page the default Spring Boot Security login 
               // page will be displayed when the user try to request a page in
               // which he is not authenticated
-              //.loginPage("/login")
+
+              // Here I am using a costum login page and if login is ok, the list of persons will be displayed
+              // Note: A request to "/" is redirected "/demo/mvclistpersons" 
+              // in the controller to show the list of persons 
+              .loginPage("/login")
+              .defaultSuccessUrl("/")
+              .failureUrl("/login?error=true")
+
               .permitAll()
               .and()
             .logout()
+
+               // A custom logout
+              .logoutSuccessUrl("/login?logout=true")
+
                .permitAll();
     }
 
