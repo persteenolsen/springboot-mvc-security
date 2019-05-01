@@ -39,10 +39,10 @@
   <br><br><br>
 
   
- <div class="container">
+ <div class="container" style="margin-left:5pt">
       
     <sec:authorize access="isAuthenticated()">
-            &nbsp;&nbsp;&nbsp;Welcome <i><b><sec:authentication property="name"/></b></i> 
+            Welcome <i><b><sec:authentication property="name"/></b></i> 
             - you are authorized to administrate the list of persons !</b>
      </sec:authorize>
       

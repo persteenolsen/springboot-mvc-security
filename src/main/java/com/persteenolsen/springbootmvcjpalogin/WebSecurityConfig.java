@@ -45,10 +45,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
           .authorizeRequests()
 
             // The list of pages/views the users can request without being authenticated
-            .antMatchers("/", "/demo/mvclistpersons", "/home", "/welcome","/bcrypt").permitAll()
-            .anyRequest().authenticated()
-            .and()
-          .formLogin()
+           .antMatchers("/", "/demo/mvclistpersons", "/home", "/welcome","/bcrypt").permitAll()
+               .anyRequest().authenticated()
+           .and()
+              .formLogin()
               // With no costum login page the default Spring Boot Security login 
               // page will be displayed when the user try to request a page in
               // which he is not authenticated
@@ -57,17 +57,31 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
               // Note: A request to "/" is redirected "/demo/mvclistpersons" 
               // in the controller to show the list of persons 
               .loginPage("/login")
+
+              // NOTE: Maybe all login request need to be post like in the form !!
+              //.loginProcessingUrl("/perform_login")
+
               .defaultSuccessUrl("/")
               .failureUrl("/login?error=true")
 
               .permitAll()
-              .and()
-            .logout()
+            .and()
+                 .logout()
 
-               // A custom logout
-              .logoutSuccessUrl("/login?logout=true")
+                 // NOTE: If CSRF NOT is disabled ALL logout request need to be POST
+                 //.logoutUrl("/perform_logout")
+                 
+                 // NOTE: Maybe it is not needed due to Logout handling in the controller
+                 .deleteCookies("JSESSIONID")
 
-               .permitAll();
+                 // A custom logout
+                .logoutSuccessUrl("/login?logout=true")
+                .invalidateHttpSession(true)
+
+                .permitAll()
+             .and()
+                .csrf()
+                .disable();
     }
 
     // NOTE: For demos only because of the password is in plain-text

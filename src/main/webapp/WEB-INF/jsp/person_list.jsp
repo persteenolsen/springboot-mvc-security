@@ -27,9 +27,9 @@
 
   
 
- <div class="container">
+ <div class="container"  style="margin-left: 5pt">
   <h2>The list of the Persons</h2>
-  <table class="table table-striped">
+  <table class="table table-striped" >
    <thead>
     <th scope="row">Name</th>
     <th scope="row">Email</th>

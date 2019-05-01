@@ -15,7 +15,7 @@
   
 	<style>
 		.header-text {Color: Green; font-family: Verdana, sans-serif; font-size: 14pt}
-		.body-content{margin-left: 10pt; margin-right: 10pt; font-family: Verdana, sans-serif}
+		.body-content{ font-family: Verdana, sans-serif}
 	</style>
 
 </head>
@@ -25,7 +25,7 @@
 	<jsp:include page="header_menu.jsp" />
 	
 	
-	<div class="container">
+	<div class="container"  style="margin-left: 5pt">
 	<div class="body-content">
 
 	<br>

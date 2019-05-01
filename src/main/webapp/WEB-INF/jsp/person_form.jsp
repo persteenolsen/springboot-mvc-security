@@ -28,7 +28,7 @@
   <jsp:include page="header_menu.jsp" />
 
 
- <div class="container">
+ <div class="container"  style="margin-left: 5pt">
   <spring:url value="/demo/mvcsaveperson" var="saveURL" />
   <h2>Person</h2>
 
