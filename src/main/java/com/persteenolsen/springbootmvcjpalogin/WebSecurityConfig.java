@@ -72,10 +72,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                  //.logoutUrl("/perform_logout")
                  
                  // NOTE: Maybe it is not needed due to Logout handling in the controller
+                 // HOWEVER: With this setting and ".invalidateHttpSession(true)" and the
+                 // Logout handling in the Controller there is HTTPS on Azure :-) !!!
                  .deleteCookies("JSESSIONID")
 
                  // A custom logout
                 .logoutSuccessUrl("/login?logout=true")
+                
+                // NOTE: Maybe it is not needed due to Logout handling in the controller 
+                // ".deleteCookies("JSESSIONID")" but I will keep it for now
                 .invalidateHttpSession(true)
 
                 .permitAll()
