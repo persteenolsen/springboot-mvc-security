@@ -22,13 +22,15 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     
    // NOTE: To be used in production 
-   // Produced from BCrypt-Generator "GreetingController" 
+   // Produced from BCrypt-Generator "BcryptEncoderController" 
    // and the plain text password "persteen1967" must be
    // removed in a real world application before deployment to production!
    private String ENCODED_PASSWORD = "$2a$10$BU4mPFHW8stXWMVH8clcZ.yZ7wl54oJq.f0Lu2HnUK6.WdooEoTZ2";
      
    @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+
+      // I am using inMemoryAuthentication but it is possible to use JDBC anbd LDAP too!
       auth.inMemoryAuthentication()
          .passwordEncoder(passwordEncoder())
          .withUser("user").password(ENCODED_PASSWORD).roles("USER");
