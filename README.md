@@ -1,4 +1,4 @@
-A Java Spring Boot MVC Web Application sucured by login and Spring Security
+A Java Spring Boot MVC Web Application secured by login and Spring Security
 
 This Java Spring Boot MVC Web application ( Spring Security ) was made by the following technology: 
 
