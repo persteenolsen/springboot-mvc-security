@@ -1,9 +1,12 @@
 HELP.md
 
 # Added while testing localhost HTTPS
-.jks
-.p12
+# All files for testing HTTPS with localhost are ignored
+*.jks
+*.p12
 
+src/main/resources/persteen.jks
+src/main/resources/persteen.p12
 
 # In the target folder and all its sub folders all files will be ignored!
 target/
