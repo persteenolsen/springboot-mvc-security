@@ -1,5 +1,9 @@
 HELP.md
 
+# Added while testing localhost HTTPS
+.jks
+.p12
+
 
 # In the target folder and all its sub folders all files will be ignored!
 target/

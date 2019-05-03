@@ -43,12 +43,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     
    @Override
     protected void configure(HttpSecurity http) throws Exception {
+
+      
         http
-          .authorizeRequests()
+           .authorizeRequests()
 
             // The list of pages/views the users can request without being authenticated
-           .antMatchers("/", "/demo/mvclistpersons", "/home", "/welcome","/bcrypt").permitAll()
-               .anyRequest().authenticated()
+            .antMatchers("/", "/demo/mvclistpersons", "/home", "/welcome","/bcrypt").permitAll()
+            .anyRequest().authenticated()
+
            .and()
               .formLogin()
               // With no costum login page the default Spring Boot Security login 
@@ -74,21 +77,33 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                  //.logoutUrl("/perform_logout")
                  
                  // NOTE: Maybe it is not needed due to Logout handling in the controller
-                 // HOWEVER: With this setting and ".invalidateHttpSession(true)" and the
-                 // Logout handling in the Controller there is HTTPS on Azure :-) !!!
                  .deleteCookies("JSESSIONID")
 
                  // A custom logout
                 .logoutSuccessUrl("/login?logout=true")
                 
-                // NOTE: Maybe it is not needed due to Logout handling in the controller 
-                // ".deleteCookies("JSESSIONID")" but I will keep it for now
+                // Note: It may already be taking care of in the ontroller Login/logout
                 .invalidateHttpSession(true)
 
                 .permitAll()
              .and()
-                .csrf()
-                .disable();
+             
+                 // TESTING!!
+                 //.portMapper()
+                 //.http(8080).mapsTo(8443)
+                 //.and()
+
+                // TESTING!!
+                // Enable HTTPS on all requests
+                //.requiresChannel().anyRequest().requiresSecure()
+                //.and()
+
+               // Now csrf is disabled and it is possible to perform logout GET like in link
+               // Note: csrf is enabled by default and then logout is performed by POST
+               .csrf()
+               .disable();
+              
+
     }
 
     // NOTE: For demos only because of the password is in plain-text
