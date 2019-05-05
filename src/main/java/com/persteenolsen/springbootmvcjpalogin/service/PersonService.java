@@ -1,4 +1,4 @@
-package com.persteenolsen.springbootmvcjpalogin;
+package com.persteenolsen.springbootmvcjpalogin.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
  
-import com.persteenolsen.springbootmvcjpalogin.PersonEntity;
-import com.persteenolsen.springbootmvcjpalogin.PersonRepository;
+import com.persteenolsen.springbootmvcjpalogin.model.PersonEntity;
+import com.persteenolsen.springbootmvcjpalogin.dao.PersonRepository;
  
 @Service
 public class PersonService {

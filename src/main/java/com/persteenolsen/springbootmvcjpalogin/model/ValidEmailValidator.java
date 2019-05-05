@@ -1,4 +1,4 @@
-package com.persteenolsen.springbootmvcjpalogin;
+package com.persteenolsen.springbootmvcjpalogin.model;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

@@ -1,6 +1,6 @@
 
 
-package com.persteenolsen.springbootmvcjpalogin;
+package com.persteenolsen.springbootmvcjpalogin.controller;
 
 import java.util.Map;
 

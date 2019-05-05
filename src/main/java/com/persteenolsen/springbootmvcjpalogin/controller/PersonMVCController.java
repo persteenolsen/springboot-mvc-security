@@ -1,4 +1,4 @@
-package com.persteenolsen.springbootmvcjpalogin;
+package com.persteenolsen.springbootmvcjpalogin.controller;
  
 import java.util.List;
  
@@ -19,8 +19,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.persteenolsen.springbootmvcjpalogin.PersonEntity;
-import com.persteenolsen.springbootmvcjpalogin.PersonService;
+import com.persteenolsen.springbootmvcjpalogin.model.PersonEntity;
+import com.persteenolsen.springbootmvcjpalogin.service.PersonService;
 
 
 @Controller    

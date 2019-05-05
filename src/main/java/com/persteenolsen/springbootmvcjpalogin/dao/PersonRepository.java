@@ -1,10 +1,10 @@
-package com.persteenolsen.springbootmvcjpalogin;
+package com.persteenolsen.springbootmvcjpalogin.dao;
 
  
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
  
-import com.persteenolsen.springbootmvcjpalogin.PersonEntity;
+import com.persteenolsen.springbootmvcjpalogin.model.PersonEntity;
 
 // This Repository point/mapps the values of the PersonEntity (Model) to the matching 
 // columns in Table of the Database 

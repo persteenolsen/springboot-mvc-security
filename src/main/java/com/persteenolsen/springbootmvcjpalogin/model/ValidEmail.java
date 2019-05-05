@@ -1,4 +1,4 @@
-package com.persteenolsen.springbootmvcjpalogin;
+package com.persteenolsen.springbootmvcjpalogin.model;
 
 import static java.lang.annotation.ElementType.*;
 import static java.lang.annotation.RetentionPolicy.*;
@@ -14,7 +14,7 @@ import javax.validation.Payload;
 // Annotated (used) in the Model "PersonEntity" and implemented in the Java file ValidEmailValidator
 @Target({ METHOD, FIELD, ANNOTATION_TYPE })
 @Retention(RUNTIME)
-@Constraint(validatedBy = com.persteenolsen.springbootmvcjpalogin.ValidEmailValidator.class)
+@Constraint(validatedBy = com.persteenolsen.springbootmvcjpalogin.model.ValidEmailValidator.class)
 @Documented
 public @interface ValidEmail {
 

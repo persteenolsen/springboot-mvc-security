@@ -1,5 +1,5 @@
 
-package com.persteenolsen.springbootmvcjpalogin;
+package com.persteenolsen.springbootmvcjpalogin.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,7 +13,7 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
-import com.persteenolsen.springbootmvcjpalogin.ValidEmail;
+import com.persteenolsen.springbootmvcjpalogin.model.ValidEmail;
 
 // The table in the Database will have a name almost equal to "SpringBootMvcJpaLoginPersons"
 @Entity
