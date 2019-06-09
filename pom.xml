@@ -23,10 +23,27 @@
 	</properties>
 
 	<dependencies>
+
+	<!--NOTE: The exlusion of com.zaxxer - HikariCP is for using Tomcat JDBC instead.
+	 -It seems that there is an issue with Hikari and MS SQL jdbc on Azure (low memory)-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<exclusions>
+        <exclusion>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+        </exclusion>
+    </exclusions>
 		</dependency>
+    <dependency>
+    <groupId>org.apache.tomcat</groupId>
+    <artifactId>tomcat-jdbc</artifactId>
+    <version>9.0.10</version>
+    </dependency>
+
+
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
@@ -45,16 +62,18 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<dependency>
+		<!--<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
-		</dependency>
+		</dependency>-->
 		
 		
 		
@@ -96,11 +115,12 @@
 			<version>1.5.1</version>
 		</dependency>
 		
+		<!--
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
-		</dependency>
+		</dependency>-->
 		
 	</dependencies>
 
@@ -111,7 +131,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			
-			
+	<!--		
 <plugin>
          <artifactId>maven-surefire-plugin</artifactId>
          <version>2.19.1</version>
@@ -121,7 +141,8 @@
           </includes>
           <testFailureIgnore>true</testFailureIgnore>
          </configuration>
-</plugin>
+</plugin>-->
+
 		</plugins>
 	</build>
 

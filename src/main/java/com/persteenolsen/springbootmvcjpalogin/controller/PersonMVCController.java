@@ -33,7 +33,8 @@ public class PersonMVCController {
 	// NOTE: The method is requested by both / and by "/demo/mvclistpersons" and 
 	// when a user hit the domain-name and "List of Persons" will be the initial page! 
 	// Show a list of Persons  in a JSP View.
-	@GetMapping({"/", "/demo/mvclistpersons"})
+	//@GetMapping({"/", "/demo/mvclistpersons"})
+	@GetMapping("/demo/mvclistpersons")
 	public ModelAndView mvclistpersons() {
 
 	 ModelAndView model = new ModelAndView("person_list");

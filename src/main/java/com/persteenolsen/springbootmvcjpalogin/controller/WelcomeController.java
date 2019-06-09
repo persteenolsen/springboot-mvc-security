@@ -13,15 +13,44 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class WelcomeController {
 	
 	private String helloworld = "";
+	
+	int mb = 1024*1024;
 		
 	//@GetMapping("/")
-	@GetMapping({"/welcome", "/home"})
+	//@GetMapping({"/welcome", "/home"})
+	@GetMapping({"/", "/welcome"})
 	public String welcome(Map<String, Object> model) {
 
-		helloworld = "Welcome to a Java Spring Boot MVC JPA Security Web application!";
+			
+	//Getting the runtime reference from system
+	Runtime runtime = Runtime.getRuntime();
+	
+	//Print used memory    
+	long usedmemory = (runtime.totalMemory() - runtime.freeMemory()) / mb;
 
-		model.put("welcomemessage", helloworld);
+	
+	//Print free memory
+	long freememory = runtime.freeMemory() / mb;
+
+	// Print total available memory / Initial memory that the JVM will have available
+	// In Azure I defined a max memory for JVM  of 512 megabytes: JAVA_TOOL_OPTIONS = "-Xms512m"
+	// NOTE: I did only have one configuration for both min and max defined like key/value:
+	// Key: JAVA_TOOL_OPTIONS 
+	// Values: -Xms512m -Xmx512m
+	long totalmemory = runtime.totalMemory() / mb;
+	
+	// Print Maximum available memory that the JVM will have available
+	// In Azure I defined a max memory for JVM of 512 megabytes: JAVA_TOOL_OPTIONS = "-Xmx512m"
+	long maxmemory = runtime.maxMemory() / mb;
+	
+	String memoryheapS = "JVM Memory info in MB - Used: " + usedmemory + " Free: " + freememory + " Total: " + totalmemory + " Max: " + maxmemory;
+
+	model.put("memorymessage", memoryheapS);
+
+	helloworld = "Welcome to a Java Spring Boot MVC JPA Security Web application!";
+
+	model.put("welcomemessage", helloworld);
 				
-		return "welcome";
+	return "welcome";
 	}
 }

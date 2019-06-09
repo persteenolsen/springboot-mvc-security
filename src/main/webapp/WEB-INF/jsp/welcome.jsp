@@ -31,6 +31,11 @@
 	<br>
 	<div class="header-text" >${welcomemessage}</div>
 	
+	
+	<div class="body-text" >${memorymessage}</div>
+	<br>
+
+	
 	This Web application use Spring Security for protecting the endpoints, and that means
 	some of the pages/views are protected by a Login Form!
 	<br>
@@ -54,6 +59,7 @@
 	<li>Visual Studio Code with the Microsoft Java Extension Pack</li>	
 	<li>Microsoft Azure App Service with a Free App Service Plan for web hosting</li>
 	<li>MS SQL Database</li>
+	<li>Datasource is Tomcat JDBC instead of default Hikari</li>
 	
 	</ul>
 
