@@ -40,14 +40,14 @@ pageEncoding="ISO-8859-1"%>
          
            <div class="form-group">
             
-                <label for="username">Username:</label>
+                <label for="username">Username: (user)</label>
                 <input class="form-control" type='text' name='username' value=''>
               
            </div>
               
           <div class="form-group">
               
-             <label for="password">Password:</label>
+             <label for="password">Password: (persteen1967)</label>
              <input class="form-control" type='password' name='password' />
 
           </div>
