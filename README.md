@@ -2,6 +2,9 @@ A Java Spring Boot MVC Web Application secured by login and Spring Security
 
 This Java Spring Boot MVC Web application ( Spring Security ) was made by the following technology: 
 
+Last updated: 21-01-2025
+
+- Java Version 11
 - springboot-mvc-security at GitHub
 - Visual Studio Code with the Microsoft Java Extension Pack
 - Microsoft Azure App Service with a Free App Service Plan for web hosting
