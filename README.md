@@ -5,7 +5,8 @@ This Java Spring Boot MVC Web application ( Spring Security ) was made by the fo
 Last updated: 22-01-2025
 
 - Running by Java Version 11 
-- Tested with Java 17 on the Dev PC but with Java 11 in pom.xml  
+- Tested with Java 17 on the Dev PC but with Java 11 in pom.xml
+- Spring Boot 2.1.4  
 - springboot-mvc-security at GitHub
 - Visual Studio Code with the Microsoft Java Extension Pack
 - Microsoft Azure App Service with a Free App Service Plan for web hosting

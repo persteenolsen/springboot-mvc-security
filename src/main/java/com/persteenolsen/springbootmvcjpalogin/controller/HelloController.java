@@ -7,8 +7,8 @@ import java.util.Map;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-// This Controller is saving a welcome message in the model to be used in the JSP View
-// It is using GetMapping to get url request by both /home and /welcome
+// This Controller is saving a hello message in the model to be used in the JSP View
+// It is using GetMapping to get url request by /hello
 @Controller
 public class HelloController {
 	
