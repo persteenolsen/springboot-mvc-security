@@ -49,7 +49,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
            .authorizeRequests()
 
             // The list of pages/views the users can request without being authenticated
-            .antMatchers("/", "/demo/mvclistpersons", "/home", "/welcome","/bcrypt").permitAll()
+            .antMatchers("/", "/demo/mvclistpersons", "/hello", "/home", "/welcome","/bcrypt").permitAll()
             .anyRequest().authenticated()
 
            .and()
