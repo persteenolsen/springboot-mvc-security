@@ -1,8 +1,8 @@
-A Java Spring Boot MVC Web Application secured by login and Spring Security
+A Java Spring Boot 2 MVC Web Application secured by login and Spring Security
 
 This Java Spring Boot MVC Web application ( Spring Security ) was made by the following technology: 
 
-Last updated: 22-01-2025
+Last updated: 30-01-2025
 
 - Running by Java Version 11 
 - Tested with Java 17 on the Dev PC but with Java 11 in pom.xml
@@ -21,3 +21,37 @@ Last updated: 22-01-2025
 - Hibernate Validator and Apache Commons Validater for server side form validation
 - JSP for the View part ( GUI )
 - Bootstrap for the responsive design
+
+
+# Config at Azure App Service
+
+- Java 11
+- Tomecat 8.5
+- Copy the ROOT.war to wwwroot - webapps ( Stop / Start the Web App by Azure Portal )
+
+# Usage
+
+- Download or fork the source code from GitHub
+
+# Create the file application.properties with the content below and place the file in the resources folder
+
+spring.datasource.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
+ 
+spring.datasource.url=jdbc:sqlserver:// The name of the MySQL server;
+databaseName= The name of the Database
+
+spring.datasource.username= The username of the MySQL server
+
+spring.datasource.password= The password of the MySQL server
+
+spring.jpa.hibernate.ddl-auto = none
+
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.SQLServer2012Dialect
+
+spring.jpa.properties.hibernate.id.new_generator_mappings=false
+
+spring.jpa.properties.hibernate.format_sql=true
+
+spring.mvc.view.prefix: /WEB-INF/jsp/
+
+spring.mvc.view.suffix: .jsp
